@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services.mycompany.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.mycompany.com/">
+
+<xs:element name="addData" type="tns:addData"/>
+
+<xs:element name="addDataResponse" type="tns:addDataResponse"/>
+
+<xs:element name="assignmentMovie" type="tns:assignmentMovie"/>
+
+<xs:element name="displayData" type="tns:displayData"/>
+
+<xs:element name="displayDataResponse" type="tns:displayDataResponse"/>
+
+<xs:element name="findData" type="tns:findData"/>
+
+<xs:element name="findDataResponse" type="tns:findDataResponse"/>
+
+<xs:element name="removeData" type="tns:removeData"/>
+
+<xs:element name="removeDataResponse" type="tns:removeDataResponse"/>
+
+<xs:element name="updateData" type="tns:updateData"/>
+
+<xs:element name="updateDataResponse" type="tns:updateDataResponse"/>
+
+<xs:complexType name="updateData">
+<xs:sequence>
+<xs:element name="updateData" type="tns:assignmentMovie" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignmentMovie">
+<xs:sequence>
+<xs:element name="budget" type="xs:double" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="director" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+<xs:element name="image" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="producer" type="xs:string" minOccurs="0"/>
+<xs:element name="releaseDate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateDataResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeData">
+<xs:sequence>
+<xs:element name="removeData" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeDataResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findData">
+<xs:sequence>
+<xs:element name="arg0" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:assignmentMovie" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addData">
+<xs:sequence>
+<xs:element name="addData" type="tns:assignmentMovie" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:assignmentMovie" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="displayData">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="displayDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:assignmentMovie" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
